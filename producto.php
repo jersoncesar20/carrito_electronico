@@ -31,6 +31,7 @@
                            
                             <div class="form-group row">
                                 <label class="col-lg-2 col-md-2 col-sm-12" >descripcion:</label>
+                                
                                 <input type="text" name="nombre" placeholder="Ingrese la descripcion" class="form-control col-lg-10 col-md-6 col-sm-12"required>
                             </div>
                             <div class="form-group row">
