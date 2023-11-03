@@ -1,5 +1,5 @@
 <?php
-    require('conexion.php');
+    require('include/conexion.php');
     
     ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                        <form action="registrar_usuarios.php" method="post" enctype="multipart/form-data">
+                        <form action="operaciones/registrar_usuarios.php" method="post" enctype="multipart/form-data">
                             <div class="form-group row ">
                                 <label class="col-lg-2 col-md-2 col-sm-12" for="">DNI:</label>
                                 <input type="number"class="form-control col-lg-4 col-md-4 col-sm-12"  name="dni" autocomplete="off"placeholder="Ingrese su Dni " required >

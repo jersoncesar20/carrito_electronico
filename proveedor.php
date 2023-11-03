@@ -1,5 +1,5 @@
 <?php
-    include('conexion.php');
+    include('include/conexion.php');
     
     ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                        <form action="registrar_proovedores.php" method="post">
+                        <form action="operaciones/registrar_proovedores.php" method="post">
                             
 
                         <div class="form-group row ">

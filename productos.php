@@ -1,5 +1,5 @@
 <?php
-    require('conexion.php');
+    require('include/conexion.php');
     
     ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
                     <div class="card">
                         <div class="card-body">
 
-                        <form action="registrar_productos.php" method="post"enctype="multipart/form-data">
+                        <form action="operaciones/registrar_productos.php" method="post"enctype="multipart/form-data">
                           
 
 

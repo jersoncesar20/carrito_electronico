@@ -1,5 +1,5 @@
 <?php
-    require('conexion.php');
+    require('include/conexion.php');
     
     ?>
 <!DOCTYPE html>
@@ -35,7 +35,7 @@
                     <div class="card ">
                         <div class="card-body">
 
-                        <form action="registrar_categorias.php" method="post">
+                        <form action="operaciones/registrar_categorias.php" method="post">
                             <div class="form-group row ">
                                 <label class="col-lg-2 col-md-2 col-sm-12" for="">Nombre de la Categoria:</label>
                                 <input type="text"class="form-control col-lg-4 col-md-4 col-sm-12"  name="categoria" autocomplete="off"placeholder="Nombre de la categoria  " required >
