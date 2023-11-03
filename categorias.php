@@ -140,47 +140,6 @@
 
 
 <br>
-                        <br>
-                        <br>
-                        <table class="table table-bordered"id="userstable">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      
-    </tr>
-  
-
-  </thead>
-  <tbody>
-
-
-    <?php
-    $sql=$conn->query("Select*from categoria");
-    while($raul=$sql->fetch_object()){?>
-<tr>
-      <th scope="row"><?=$raul->id ?></th>
-      <td><?=$raul->nombre ?></td>
-      
-    <td>
-    
-        <a href="actualizar.php" type="button" data-bs-toggle="modal" data-bs-target="#modaleditar" class="btn btn-success"><i class="fa-solid- fa-pen-to-square">Editar</i></a>
-        <a href="eliminar_usuarios.php" type="button" class="btn btn-danger"><i class="fa-solid- fa-pen-to-square">Eliminar</i></a>
-       
-      </td>
-    </tr>
-
-
-   <?php }
-
-
-
-    ?>
-
-   
-  </tbody>
-</table>
-<!-- table -->
 
 
 

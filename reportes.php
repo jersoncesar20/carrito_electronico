@@ -175,58 +175,7 @@
 
 
 
-                        
-                        <br>
-                        <br>
-                        <br>
-                        <table class="table" id="userstable">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">Dni</th>
-      <th scope="col">Apellidos_Nombres</th>
-      <th scope="col">Correo</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Nacimiento</th>
-      <th scope="col">Accion</th>
-    </tr>
-  
-
-  </thead>
-  <tbody>
-
-
-    <?php
-    $sql=$conn->query("Select*from usuario");
-    while($raul=$sql->fetch_object()){?>
-<tr>
-      <th scope="row"><?=$raul->id ?></th>
-      <td><?=$raul->dni ?></td>
-      <td><?=$raul->apellidos_nombres ?></td>
-      <td><?=$raul->correo ?></td>
-      <td><?=$raul->telefono ?></td>
-      <td><?=$raul->direccion ?></td>
-      <td><?=$raul->fecha_nacimiento ?></td>
-    <td>
-    
-        <a href="actualizar.php" type="button" data-bs-toggle="modal" data-bs-target="#modaleditar" class="btn btn-success"><i class="fa-solid- fa-pen-to-square">Editar</i></a>
-        <a href="eliminar_usuarios.php" type="button" class="btn btn-danger"><i class="fa-solid- fa-pen-to-square">Eliminar</i></a>
-       
-      </td>
-    </tr>
-
-
-   <?php }
-
-
-
-    ?>
-
-   
-  </tbody>
-</table>
-<!-- table -->
+                  
                         </div>
                         
                     </div>

@@ -304,66 +304,6 @@
 
 
 
-                        
-                        <br>
-                        <br>
-                        <br>
-                        <table class="table" id="userstable">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">Codigo</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Detalle</th>
-      <th scope="col">id_Categoria</th>
-      <th scope="col">P_Compra</th>
-      <th scope="col">P_Venta</th>
-      <th scope="col">Stock</th>
-      <th scope="col">estado</th>
-      <th scope="col">Imagen</th>
-      <th scope="col">id_Proveedor</th>
-      <th scope="col">Accion</th>
-    </tr>
-  
-
-  </thead>
-  <tbody>
-
-
-    <?php
-    $sql=$conn->query("Select*from producto");
-    while($raul=$sql->fetch_object()){?>
-<tr>
-      <th scope="row"><?=$raul->id ?></th>
-      <td><?=$raul->codigo ?></td>
-      <td><?=$raul->descripcion ?></td>
-      <td><?=$raul->detalle ?></td>
-      <td><?=$raul->id_categoria ?></td>
-      <td><?=$raul->precio_compra ?></td>
-      <td><?=$raul->precio_venta ?></td>
-
-      <td><?=$raul->stock ?></td>
-      <td><?=$raul->estado ?></td>
-      <td><?=$raul->imagen ?></td>
-      <td><?=$raul->id_proveedor ?></td>
-    <td>
-    
-        <a href="actualizar.php" type="button" data-bs-toggle="modal" data-bs-target="#modaleditar" class="btn btn-success"><i class="fa-solid- fa-pen-to-square">Editar</i></a>
-        <a href="eliminar_usuarios.php" type="button" class="btn btn-danger"><i class="fa-solid- fa-pen-to-square">Eliminar</i></a>
-       
-      </td>
-    </tr>
-
-
-   <?php }
-
-
-
-    ?>
-
-   
-  </tbody>
-</table>
 <!-- table -->
                         </div>
                         
