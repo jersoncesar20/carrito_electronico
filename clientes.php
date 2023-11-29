@@ -197,7 +197,7 @@ echo"<td>".$respuesta['direccion']."</td>";
 echo"<td>".$respuesta['direccion_envio']."</td>";
 
 
-echo"<td><button class='btn btn-primary'>Editar</button><button class='btn btn-danger'>Eliminar</button></td>";
+echo"<td><button class='btn btn-success'>Editar</button><button class='btn btn-danger'>Eliminar</button></td>";
 
 
 

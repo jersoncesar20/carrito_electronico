@@ -176,7 +176,7 @@ $ejecutar=mysqli_query($conn,$consulta);
 $cont=0;
 
 while($respuesta=mysqli_fetch_array($ejecutar)){
-    $cont++;
+    $cont+1;
    
 echo"<tr>";
 echo"<td>".$cont."</td>";
@@ -184,7 +184,7 @@ echo"<td>".$respuesta['id']."</td>";
 echo"<td>".$respuesta['nombre']."</td>";
 
 
-echo"<td><button class='btn btn-primary'>Editar</button><button class='btn btn-danger'>Eliminar</button></td>";
+echo"<td><button class='btn btn-success'>Editar</button><button class='btn btn-danger'>Eliminar</button></td>";
 
 
 
