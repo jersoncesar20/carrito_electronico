@@ -176,7 +176,7 @@ $ejecutar=mysqli_query($conn,$consulta);
 $cont=0;
 
 while($respuesta=mysqli_fetch_array($ejecutar)){
-    $cont+1;
+    $cont++;
    
 echo"<tr>";
 echo"<td>".$cont."</td>";
