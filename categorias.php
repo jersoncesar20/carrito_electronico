@@ -1,189 +1,89 @@
 <?php
-    require('include/conexion.php');
-    
-    ?>
+include("include/conexion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
+    <title>carrito</title>
     <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
-    
-    <link rel="shortcut icon" href="carrito.png">
+
+
+    <!-- Plugins css -->
+    <link href="plantilla/Admin/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="plantilla/Admin/plugins/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="plantilla/Admin/plugins/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="plantilla/Admin/plugins/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
-    <?php
+    <?php 
+    // Lenguaje en php
     require('include/header.php');
+
     ?>
-     
-     <!---INICIO DE CONTENIDO--->
-<div class="main-content">
+
+    <!-- INICIO DE CONTENIDO -->
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <?php  include("include/modal_fm_reg_usuarios.php");?>
+                        
+                        <h4>Lista de proveedores</h4>
+                        <div class="card">
+                            <div class="card-body">
+                         <table  id="basic-datatable" class="table dt-responsive nowrap">
+                             <thead>
+                                 <tr>
+                                     <th>Nº Orden</th>
+                                     <th>id</th>
+                                     <th>nombre</th>
+                                     <th>Acciones</th>
+                                    
+                                 </tr>
+
+                             </thead>
+
+                             <tbody>
+                                <?php 
+                                $consulta = "SELECT * FROM categoria";
+                                $ejecutar = mysqli_query($conn, $consulta);
+                                $contador = 0;
+                                while ($respuesta = mysqli_fetch_array($ejecutar)) {
+                                    $contador += 1;
+                                    # code...
+                                    echo "<tr>";
+                                    echo "<td>".$contador. "</td>";
+                                    echo "<td>".$respuesta['id']."</td>";
+                                    echo "<td>".$respuesta['nombre']."</td>";
+                                    echo "<td>".$respuesta['id_rol']."</td>";
+
+                                    echo "<br><button class='btn btn-success'>Editar</button><button class='btn btn-danger'>Eliminar</button>";
+                                  echo "</tr>";
+                                }
+                                ?>
 
 
-   <div class="page-content">
-       <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="col-10">
-                    <h4>Registrar Categorias</h4>
-                    </div>
-                    <div class="card ">
-                        <div class="card-body">
+                             </tbody>
 
-                        <form action="operaciones/registrar_categorias.php" method="post">
-                            <div class="form-group row ">
-                                <label class="col-lg-2 col-md-2 col-sm-12" for="">Nombre de la Categoria:</label>
-                                <input type="text"class="form-control col-lg-4 col-md-4 col-sm-12"  name="categoria" autocomplete="off"placeholder="Nombre de la categoria  " required >
 
+
+                         </table>  
                             </div>
-
-
-                            <div class="form-group row ">
-                                <label class="col-lg-2 col-md-2 col-sm-12" for=""></label>
-                                <button type="submit" class="btn btn-primary ">Registrar</button>
-
-                            </div>
-
-                      
-                      
-
-
-                        </form>
                         </div>
-                        
                     </div>
-
-
-
-
-
-
-
-
-
-
-                    <div class="card">
-                        <div class="card-body">
-
-                        
-
-
-
-
-
-
-                        <!-- Modal -->
-<div class="modal fade" id="modaleditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">editar datos del Usuario</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-
-        <form action="" method="post">
-
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Dni</label>
-            <input type="number" name="dni"class="form-control" id="exampleInputEmail1" value=""aria-describedby="emailHelp">
-           
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Apellidos_Nombres</label>
-            <input type="text" name="a_n"class="form-control" id="exampleInputEmail1" value=""aria-describedby="emailHelp">
-           
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">correo</label>
-            <input type="email"  name="correo"class="form-control" value=""id="exampleInputPassword1">
-          </div>
-          
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">telefono</label>
-            <input type="number"  name="telefono"class="form-control" value=""id="exampleInputPassword1">
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Direccion</label>
-            <input type="text"  name="direccion"class="form-control" value=""id="exampleInputPassword1">
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Fecha_Nacimiento</label>
-            <input type="date"  name="nacimiento"class="form-control" value=""id="exampleInputPassword1">
-          </div>
-          
-          <button type="submit" class="btn btn-primary">editar</button>
-        </form>
-
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Save </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-<br>
-
-
-
-
-<!-- table -->
-
-
-
-                        </div>
-                        
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-
             </div>
-
-
         </div>
-
     </div>
+     <!-- FIN DE CONTENIDO -->
 
 
-</div>
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-     <!---FIN DE CONTENIDO-->
     <!-- jQuery  -->
     <script src="plantilla/Admin/vertical/assets/js/jquery.min.js"></script>
     <script src="plantilla/Admin/vertical/assets/js/bootstrap.bundle.min.js"></script>
@@ -191,6 +91,27 @@
     <script src="plantilla/Admin/vertical/assets/js/waves.js"></script>
     <script src="plantilla/Admin/vertical/assets/js/simplebar.min.js"></script>
 
+    <!-- App js -->
+    <!-- third party js -->
+    <script src="plantilla/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/dataTables.bootstrap4.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/responsive.bootstrap4.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/buttons.bootstrap4.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/buttons.flash.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/buttons.print.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/dataTables.select.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/pdfmake.min.js"></script>
+    <script src="plantilla/Admin/plugins/datatables/vfs_fonts.js"></script>
+    <!-- third party js ends -->
+
+    <!-- Datatables init -->
+    <script src="plantilla/Admin/vertical/assets/pages/datatables-demo.js"></script>
+
+    
     <!-- App js -->
     <script src="plantilla/Admin/vertical/assets/js/theme.js"></script>
 

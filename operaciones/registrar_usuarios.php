@@ -38,7 +38,7 @@ $pass_secure = password_hash($dni, PASSWORD_DEFAULT);
     
     $ejecutar= mysqli_query($conn, $consulta);
     
-    if ($ejecutar) {
+    if ($ejecutar) {    
         echo "Registro Exitoso";
     }else {
         echo "Registro Fallido";

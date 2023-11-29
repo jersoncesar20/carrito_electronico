@@ -29,7 +29,7 @@ $ruta_foto="../img_productos/".$nombre_archivo;
   if(move_uploaded_file($_FILES['img']['tmp_name'], $ruta_foto)){
 
 
-    $consulta="INSERT INTO producto(codigo, descripcion, detalle, id_categoria,precio_compra,precio_venta,stock,estado,imagen,id_proveedor )
+    $consulta="INSERT INTO producto(codigo, descripcion, detalle, id_categoria,precio_compra,precio_venta,stock,estado,foto,id_proveedor )
     VALUES ('$codigo', '$descripcion', '$detalles', '$id_categori', '$p_c', '$p_v','$stock','$estado','$nombre_archivo','$id_proveedor')";
     
     $ejecutar= mysqli_query($conn, $consulta);
