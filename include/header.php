@@ -61,8 +61,8 @@
 <div  data-simplebar class="h-100">
 <div class="navbar-brand-box">
     <a class="logo"href="">
-        <img src="raulito.png" width="100" height="100"alt="imagen">
-        <p>Raul Jr</p>
+        <img src="jer.jpg" width="100" height="100"alt="">
+        <p>Jerson cesar</p>
 
 
     </a>
@@ -76,14 +76,7 @@
                     <li>
                         <a href="" class="waves-effect"><i class="feather-home"></i>Inicio</a>
                     </li>
-                    <li>
-                        <a href="ventas.php" class="waves-effect"><i class="feather-shopping-bag"></i>Ventas</a>
-                    </li>
-                    <li>
-                        <a href="productos.php" class="waves-effect"><i class="dripicons-cart"></i>Productos</a>
-                    </li>
-
-
+                    
                     <li>
                         <a href="categorias.php" class="waves-effect"><i class="feather-shopping-bag"></i>Categoria</a>
                     </li>
@@ -93,6 +86,12 @@
                     </li>
                     <li>
                         <a href="clientes.php" class="waves-effect"><i class="feather-users"></i>Clientes</a>
+                    </li>
+                    <li>
+                        <a href="ventas.php" class="waves-effect"><i class="feather-shopping-bag"></i>Ventas</a>
+                    </li>
+                    <li>
+                        <a href="productos.php" class="waves-effect"><i class="dripicons-cart"></i>Productos</a>
                     </li>
 
                     <li>
@@ -107,7 +106,9 @@
                     <li>
                         <a href="clientes.php" class="waves-effect"><i class="feather-user-plus"></i>Clientes</a>
                     </li>
-
+                    <li>
+                        <a href="proveedor.php" class="waves-effect"><i class="fas fa-users"></i>Proveedores</a>
+                    </li>
 
                     
                     <li>
@@ -127,9 +128,7 @@
                     <li>
                         <a href="reportes.php" class="waves-effect"><i class="dripicons-graph-line"></i>Reportes</a>
                     </li>
-                    <li>
-                        <a href="proveedor.php" class="waves-effect"><i class="fas fa-users"></i>Proveedores</a>
-                    </li>
+                    
 
 
                     <li>
