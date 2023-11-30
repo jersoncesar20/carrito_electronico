@@ -63,23 +63,6 @@
                     <div class="card">
                         <div class="card-body">
 
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        
                         <br>
                         <br>
                         <br>
@@ -104,7 +87,7 @@
   </thead>
   <tbody>
   <?php
-$consulta="select *from ventas ";
+$consulta="SELECT * FROM ventas";
 $ejecutar=mysqli_query($conn,$consulta);
 $cont=0;
 
@@ -122,7 +105,7 @@ echo"<td>".$respuesta['id_cliente']."</td>";
 echo"<td>".$respuesta['id_usuario']."</td>";
 
 
-echo"<td><button class='btn btn-primary'>Editar</button><button class='btn btn-danger'>Eliminar</button></td>";
+echo"<td><button class='btn btn-info'>Editar</button><button class='btn btn-danger'>Eliminar</button></td>";
 
 
 

@@ -164,13 +164,11 @@ require('conexion.php');
      <th scope="col">#</th>
       <th scope="col">id</th>
       <th scope="col">Ruc_Dni</th>
-      <th scope="col">Razon Social</th>
+      <th scope="col">Razon_Social</th>
       <th scope="col">Telefono</th>
       <th scope="col">Correo</th>
-      
       <th scope="col">Direccion</th>
       <th scope="col">Direccion de envio</th>
-
       <th scope="col">Accion</th>
     </tr>
   
@@ -190,7 +188,7 @@ echo"<tr>";
 echo"<td>".$cont."</td>";
 echo"<td>".$respuesta['id']."</td>";
 echo"<td>".$respuesta['ruc_dni']."</td>";
-echo"<td>".$respuesta['razon Social']."</td>";
+echo"<td>".$respuesta['razon_social']."</td>";
 echo"<td>".$respuesta['telefono']."</td>";
 echo"<td>".$respuesta['correo']."</td>";
 echo"<td>".$respuesta['direccion']."</td>";
