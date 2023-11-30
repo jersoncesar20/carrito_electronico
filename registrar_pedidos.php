@@ -1,17 +1,18 @@
 <?php
 include("conexion.php");
 
-
-$fechaHoraVenta=$_POST['fecha_pedido'];
+$cliente=$_POST['id_cliente'];
+$fechaHoraVenta=$_POST['fecha_hora_pedido'];
 $echaEntrega=$_POST['fecha_entrega'];
+$metodoPago=$_POST['metodo_pago'];
 $monto=$_POST['monto'];
 $comprobante=$_POST['comprobante'];
 $estado=$_POST['estado'];
 
 
 
-$consulta="INSERT INTO pedidos (fecha_pedido, fecha_entrega, monto, comprobante, estado) 
-            VALUES ('$fechaHoraVenta','$echaEntrega','$monto','$comprobante','$estado')";
+$consulta="INSERT INTO pedidos(id_cliente, fecha_hora_pedido, fecha_entrega, metodo_pago, monto, comprobante, estado) 
+            VALUES ('$cliente','$fechaHoraVenta','$echaEntrega','$metodoPago','$monto','$comprobante','$estado')";
 
 
 

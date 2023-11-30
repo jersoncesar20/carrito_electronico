@@ -1,21 +1,19 @@
  
- 
- 
- 
- <!-- Large modal -->
- <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="modal" data-target=".venta">+Nuevo</button>
+ <button type="button" class="btn btn-info waves-effect waves-light" data-toggle="modal" data-target=".registrar">+ Nuevo</button>
 
-<div class="modal fade venta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title h4" id="myLargeModalLabel">Venta</h5>
-                                                    <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                <form action="registrar_Venta.php" method="POST">
+<div class="modal fade registrar" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h5 class="modal-title h4" id="myLargeModalLabel">Venta</h5>
+               <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+           </div>
+           <div class="modal-body">
+               
+          
+           <form action="registrar_venta.php" method="POST">
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-md-2 col-sm-12">SERIE VENTA:</label>
                                     <input type="number" name="serie_venta"class="form-control col-lg-4 col-md-4 col-sm-12" required>
@@ -64,14 +62,15 @@
 
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-md-2 col-sm-12"></label>
-                                        <button type="submit" class="btn btn-dark">Registrar</button>
+                                        <button type="submit" class="btn btn-info">Registrar</button>
                                     
                                 </div>
                             </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-
-                                    
+           </div>
+        </div>
+   </div>
+</div>
+ 
+ 
+ 

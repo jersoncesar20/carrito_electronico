@@ -1,192 +1,92 @@
-<?php
-    require('conexion.php');
-    
-    ?>
+<?php include("conexion.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
+    <title>cesar</title>
+
     <link href="plantilla/Admin/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
-
-
-<!-- Plugins css -->
+    <!-- Plugins css -->
     <link href="plantilla/Admin/plugins/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/plugins/datatables/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/plugins/datatables/buttons.bootstrap4.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/plugins/datatables/select.bootstrap4.css" rel="stylesheet" type="text/css" />
-    
 
-    
-    <link rel="shortcut icon" href="carrito.png">
 </head>
-
 <body>
-    <?php
-    require('include/header.php');
-    ?>
-     
-     <!---INICIO DE CONTENIDO--->
+<?php
+include('include/header.php');
+?>
+<!--INICIO DE CONTENIDO-->
 <div class="main-content">
-
-
-   <div class="page-content">
-       <div class="container-fluid">
-            <div class="row">
+    <div class="page-content">
+        <div class="container-fluid"> <!--conteiner solo se usa el 80% de la pantalla conteiner-fluid ocupa todo-->
+            <div class="row"><!--row ayuda a ser responsive pero en bootstrap-->
                 <div class="col-12">
-                    <div class="col-10">
-                    <h4>Lista  de Ventas</h4>
-                    </div>
-                    <div class="card">
-                        <!---<div class="card-body">
 
-                        
-                        </div>--->
-                        
-                    </div>
-
-
-
-
-
-
-
-
-
-                    <?php  
-                      include("include/modal_frm_reg_ventas.php");
-                      ?>
+                    <?php include("include/modal_frm_reg_pedidos.php"); ?>
+                    <h4>PEDIDOS</h4>
                     <div class="card">
                         <div class="card-body">
 
-                        <br>
-                        <br>
-                        <br>
-       
+                            <table id="basic-datatable" class="table dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Nº PEDIDOS</th>
+                                    <th>ID CLIENTES</th>
+                                    <th>FECHA Y HORA DEL PEDIDO</th>
+                                    <th>FECHA DE ENTREGA</th>
+                                    <th>METODO DE PAGO</th>
+                                    <th>MONTO</th>
+                                    <th>COMPROBANTE DE PAGO</th>
+                                    <th>ESTADO</th>
+                                  
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    $consulta= "SELECT * FROM ventas";
+                                    $ejecutar= mysqli_query($conn, $consulta);
+                                    $contador= 0;
+                                    while ($respuesta= mysqli_fetch_array($ejecutar)) {
+                                        $contador= 1;
+                                        
+                                        echo "<br>";
+                                        echo "<td>".$contador."</td>";
+                                        echo "<td>".$respuesta['id_cliente']."</td>";
+                                        echo "<td>".$respuesta['fecha_hora_pedido']."</td>";
+                                        echo "<td>".$respuesta['fecha_entrega']."</td>";
+                                        echo "<td>".$respuesta['metodo_pago']."</td>";
+                                        echo "<td>".$respuesta['monto']."</td>";
+                                        echo "<td>".$respuesta['comprobante']."</td>";
+                                        echo "<td>".$respuesta['estado']."</td>";
+                                        echo "<td><button class= 'btn btn-success'>Editar</button> <button class= 'btn btn-danger'>Eliminar</button></td>";
+                                        echo "</tr>";
 
-<table id="basic-datatable" class="table dt-responsive nowrap">
-  <thead>
-    <tr>
-     <th scope="col">#</th>
-      <th scope="col">id</th>
-      <th scope="col">serie_venta</th>
-      <th scope="col">Numero Venta</th>
-      <th scope="col">Fecha_Hora_venta</th>
-      <th scope="col">monto Total</th>
-      <th scope="col">id_cliente</th>
-      <th scope="col">id_usuario</th>
-    
-      <th scope="col">Accion</th>
-    </tr>
-  
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
 
-  </thead>
-  <tbody>
-  <?php
-$consulta="SELECT * FROM ventas";
-$ejecutar=mysqli_query($conn,$consulta);
-$cont=0;
-
-while($respuesta=mysqli_fetch_array($ejecutar)){
-    $cont++;
-   
-echo"<tr>";
-echo"<td>".$cont."</td>";
-echo"<td>".$respuesta['id']."</td>";
-echo"<td>".$respuesta['serie_venta']."</td>";
-echo"<td>".$respuesta['numero_venta']."</td>";
-echo"<td>".$respuesta['fecha_hora_venta']."</td>";
-echo"<td>".$respuesta['monto_total']."</td>";
-echo"<td>".$respuesta['id_cliente']."</td>";
-echo"<td>".$respuesta['id_usuario']."</td>";
-
-
-echo"<td><button class='btn btn-info'>Editar</button><button class='btn btn-danger'>Eliminar</button></td>";
-
-
-
-
-
-echo"</tr>";
-
-
-    
-
-}
-
-
-
-?>
-  </tbody>
-</table>
-<!-- table -->
-                        </div>
-                        
+                        </div>  
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
-
             </div>
-
-
         </div>
-
     </div>
-
-
 </div>
+<!--FIN DE CONTENIDO-->
 
 
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-     <!---FIN DE CONTENIDO-->
-    <!-- jQuery  -->
     <script src="plantilla/Admin/vertical/assets/js/jquery.min.js"></script>
     <script src="plantilla/Admin/vertical/assets/js/bootstrap.bundle.min.js"></script>
     <script src="plantilla/Admin/vertical/assets/js/metismenu.min.js"></script>
     <script src="plantilla/Admin/vertical/assets/js/waves.js"></script>
     <script src="plantilla/Admin/vertical/assets/js/simplebar.min.js"></script>
-
-    <!-- App js -->
-    <script src="plantilla/Admin/vertical/assets/js/theme.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- jQuery  -->
-    <script src="plantilla/Admin/assets/js/jquery.min.js"></script>
-    <script src="plantilla/Admin/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="plantilla/Admin/assets/js/metismenu.min.js"></script>
-    <script src="plantilla/Admin/assets/js/waves.js"></script>
-    <script src="plantilla/Admin/assets/js/simplebar.min.js"></script>
 
     <!-- third party js -->
     <script src="plantilla/Admin/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -206,9 +106,8 @@ echo"</tr>";
 
     <!-- Datatables init -->
     <script src="plantilla/Admin/vertical/assets/pages/datatables-demo.js"></script>
-    
+
     <!-- App js -->
     <script src="plantilla/Admin/vertical/assets/js/theme.js"></script>
 </body>
-
 </html>
