@@ -25,6 +25,9 @@ $consulta="INSERT INTO cliente(ruc_dni,razon_social,correo,telefono,direccion,di
 
 
 
+    
+
+
 
 
 ?>

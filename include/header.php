@@ -91,6 +91,9 @@
                         <a href="ventas.php" class="waves-effect"><i class="feather-shopping-bag"></i>Ventas</a>
                     </li>
                     <li>
+                        <a href="venta_produ.php" class="waves-effect"><i class="feather-shopping-bag"></i>Ventas_Produc</a>
+                    </li>
+                    <li>
                         <a href="productos.php" class="waves-effect"><i class="dripicons-cart"></i>Productos</a>
                     </li>
 

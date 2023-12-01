@@ -54,7 +54,7 @@ require('conexion.php');
   </thead>
   <tbody>
   <?php
-$consulta="select *from usuario ";
+$consulta="SELECT FROM usuario";
 $ejecutar=mysqli_query($conn,$consulta);
 $cont=0;
 

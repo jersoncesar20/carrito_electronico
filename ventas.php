@@ -28,8 +28,8 @@ include('include/header.php');
             <div class="row"><!--row ayuda a ser responsive pero en bootstrap-->
                 <div class="col-12">
 
-                    <?php include("include/modal_frm_reg_ventas.php"); ?>
-                    <h4>LISTA DE VENTAS</h4>
+                    <a href="venta_produ.php" class="btn btn-success">Nuevo</a>
+                    <h4>Registrar Nueva Venta</h4>
                     <div class="card">
                         <div class="card-body">
 
