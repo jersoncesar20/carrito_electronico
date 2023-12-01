@@ -28,42 +28,40 @@ include('include/header.php');
             <div class="row"><!--row ayuda a ser responsive pero en bootstrap-->
                 <div class="col-12">
 
-                    <?php include("include/modal_frm_reg_pedidos.php"); ?>
-                    <h4>PEDIDOS</h4>
+                    <?php include("include/modal_frm_reg_ventas.php"); ?>
+                    <h4>LISTA DE VENTAS</h4>
                     <div class="card">
                         <div class="card-body">
 
                             <table id="basic-datatable" class="table dt-responsive nowrap">
                                 <thead>
-                                <tr>
-                                    <th>Nº PEDIDOS</th>
-                                    <th>ID CLIENTES</th>
-                                    <th>FECHA Y HORA DEL PEDIDO</th>
-                                    <th>FECHA DE ENTREGA</th>
-                                    <th>METODO DE PAGO</th>
-                                    <th>MONTO</th>
-                                    <th>COMPROBANTE DE PAGO</th>
-                                    <th>ESTADO</th>
-                                  
-                                </tr>
+                                    <tr>
+                                        <th>NRO REGISTRO</th>
+                                        <th>SERIE VENTA</th>
+                                        <th>NUMERO VENTA</th>
+                                        <th>APELLIDOS Y NOMBRES</th>
+                                        <th>FECHA HORA Y VENTA</th>
+                                        <th>MONTO TOTAL</th>
+                                        <th>CLIENTE</th>
+                                        <th>USUARIO</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <?php
-                                    $consulta= "SELECT * FROM ventas";
+                                    <?php 
+                                    $consulta="SELECT * FROM ventas";
                                     $ejecutar= mysqli_query($conn, $consulta);
-                                    $contador= 0;
-                                    while ($respuesta= mysqli_fetch_array($ejecutar)) {
-                                        $contador= 1;
+                                    $contador = 0;
+                                    while ($respuesta = mysqli_fetch_array($ejecutar)) {
+                                        $contador ++;
                                         
-                                        echo "<br>";
+                                        echo "<tr>";
                                         echo "<td>".$contador."</td>";
+                                        echo "<td>".$respuesta['serie_venta']."</td>";
+                                        echo "<td>".$respuesta['numero_venta']."</td>";
+                                        echo "<td>".$respuesta['fecha_hora_venta']."</td>";
+                                        echo "<td>".$respuesta['monto_total']."</td>";
                                         echo "<td>".$respuesta['id_cliente']."</td>";
-                                        echo "<td>".$respuesta['fecha_hora_pedido']."</td>";
-                                        echo "<td>".$respuesta['fecha_entrega']."</td>";
-                                        echo "<td>".$respuesta['metodo_pago']."</td>";
-                                        echo "<td>".$respuesta['monto']."</td>";
-                                        echo "<td>".$respuesta['comprobante']."</td>";
-                                        echo "<td>".$respuesta['estado']."</td>";
+                                        echo "<td>".$respuesta['id_usuario']."</td>";
                                         echo "<td><button class= 'btn btn-success'>Editar</button> <button class= 'btn btn-danger'>Eliminar</button></td>";
                                         echo "</tr>";
 
