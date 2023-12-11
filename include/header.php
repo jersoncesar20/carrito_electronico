@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +12,17 @@
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="carrito.png">
+    <link rel="stylesheet" href="mystyle.css">
+
 </head>
 
 <body>
+<div class="section">
+		<div class="snow1"></div>
+		<div class="snow2"></div>   
+		
+	</div>
+
     <!-- INICIO MENU -->
     <header id="page-topbar">
         
