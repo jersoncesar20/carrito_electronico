@@ -233,7 +233,7 @@ include('include/header.php');
             var dni = $('#dni_cliente').val();
             $.ajax({
                 type: "POST",
-                url: "operaciones2/buscar_cliente.php",
+                url: "operaciones/buscar_cliente.php",
                 data: {
                     dni_c: dni
                 },
