@@ -1,5 +1,5 @@
 <?php
-include('../include/conexion.php');
+include('../conexion.php');
 session_start();
 
 $array_productos = $_SESSION['productos'];

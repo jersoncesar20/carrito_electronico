@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Codigo para buscar en tu base de datos acá
 
-    include '../include/conexion.php';
+    include '../conexion.php';
 
     $consulta = "SELECT * FROM producto WHERE codigo='$NIT'";
     $resultado = mysqli_query($conn, $consulta);

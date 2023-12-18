@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../include/conexion.php");
+include("../conexion.php");
 
 $codigo = $_POST['cod'];
 $array_productos = $_SESSION['productos'];

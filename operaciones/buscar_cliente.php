@@ -1,5 +1,5 @@
 <?php
-include("../include/conexion.php");
+include("../conexion.php");
 
 $dni = $_POST['dni_c'];
 

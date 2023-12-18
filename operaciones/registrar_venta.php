@@ -2,7 +2,7 @@
 session_start();
 $array_productos = $_SESSION['productos'];
 
-include('../include/conexion.php');
+include('../conexion.php');
 
 $dni_cliente = $_POST['dni'];
 $id_usuario = $_POST['usuario'];
