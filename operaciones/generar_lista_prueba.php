@@ -38,7 +38,7 @@ foreach ($array_productos as $key => $value) {
     $importe = $r_b_producto['precio_venta'] * $value;
     $suma_total += $importe;
     $tabla .= "<td>" . $cont . "</td><td>" . $r_b_producto['descripcion'] . "</td><td><input type='number' class='form-control' value='" . $value . "' ></td><td>" . $r_b_producto['precio_venta'] . "</td><td>" . $importe . "</td>
-        <td><button class='btn btn-danger' onclick='eliminar_productos(" . $key . ");'>Eliminar</button></td>";
+        <td><button class='btn btn-danger' onclick='eliminar_productos(" . $key . ");'>X</button></td>";
     $tabla .= "</tr>";
 }
 $_SESSION['productos'] = $array_productos;
