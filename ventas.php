@@ -28,7 +28,7 @@ include('include/header.php');
             <div class="row"><!--row ayuda a ser responsive pero en bootstrap-->
                 <div class="col-12">
 
-                    <a href="venta_produ.php" class="btn btn-success">Nuevo</a>
+                    <a href="venta.php" class="btn btn-success">Nuevo</a>
                     <h4>Registrar Nueva Venta</h4>
                     <div class="card">
                         <div class="card-body">
