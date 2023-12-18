@@ -9,7 +9,7 @@ $id_usuario = $_POST['usuario'];
 
 $fecha_hora = date('Y-m-d H:i:s');
 
-$serie = "B002";
+$serie = "B007";
 
 $buscar_ventas = "SELECT * FROM ventas ORDER BY numero_venta DESC LIMIT 1";
 $ejecutar = mysqli_query($conn, $buscar_ventas);
@@ -41,7 +41,7 @@ $ejecutar_venta = mysqli_query($conn, $registrar_venta);
 if ($ejecutar_venta) {
 
 
-    echo "REGISTRO DE VENTA EXITOSA";
+    echo "Se registro correctamente";
 } else {
 
     echo "REGISTRO FALLIDO";
