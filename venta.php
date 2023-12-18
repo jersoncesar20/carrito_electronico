@@ -1,5 +1,5 @@
 <?php
-include('include/conexion.php');
+include('conexion.php');
 session_start();
 $_SESSION['productos'] = array();
 ?>
@@ -34,10 +34,9 @@ $_SESSION['productos'] = array();
 
 
 <body>
-    <?php
-    // lenguaje en php
-    include("include/menu.php");
-    ?>
+<?php
+include('include/header.php');
+?>
     <!-- INICIO DE CONTENIDO -->
     <div class="main-content">
         <div class="page-content">
